@@ -9,7 +9,7 @@ Read-only MCP-kompatibler STDIO-Server für MS SQL mit Tools:
 ## Quickstart
 
 ```bash
-git clone <DEIN-REPO> mssql-mcp && cd mssql-mcp
+git clone https://github.com/DominikWoh/mssql_mcp_server && cd mssql-mcp
 ./scripts/install.sh
 cp .env.example .env && nano .env
 source .venv/bin/activate
