@@ -1,3 +1,4 @@
+![SQL MCP Openwebui](SQL_MCP_Openwebui.png)
 # MSSQL MCP Server
 
 Ein minimaler, rein lesender Server der das [Model Context Protocol](https://github.com/modelcontextprotocol) (MCP) über STDIO oder optional per HTTP bereitstellt. Das Projekt bietet eine kleine Sammlung von Tools, um Daten aus einer Microsoft SQL Server Datenbank abzufragen, ohne Schreibzugriff zu erlauben.
