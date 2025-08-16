@@ -1,0 +1,18 @@
+[project]
+name = "mssql-mcp-server"
+version = "0.1.0"
+description = "Minimal MCP-style STDIO server exposing read-only MS SQL tools (query/tables/columns/sample)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pymssql>=2.3.0",
+  "pydantic>=2.6.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+mssql-mcp = "mssql_mcp_server.__main__:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

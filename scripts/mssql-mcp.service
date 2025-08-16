@@ -1,0 +1,14 @@
+[Unit]
+Description=MSSQL MCP Server (STDIO over systemd-run wrapper)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/mssql-mcp
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/mssql-mcp/.venv/bin/mssql-mcp
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
