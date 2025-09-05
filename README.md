@@ -17,6 +17,9 @@ cd mssql_mcp_server
 ./scripts/install.sh             # legt venv an und installiert Abhängigkeiten
 cp .env.example .env             # Zugangsdaten & Limits anpassen
 source .venv/bin/activate        # virtuelle Umgebung aktivieren
+pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt 2>/dev/null || true
+pip install fastapi 'uvicorn[standard]'
 ```
 
 ## Konfiguration
