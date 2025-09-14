@@ -354,6 +354,18 @@ def _handle(req: Dict[str, Any]) -> Dict[str, Any]:
     rid = req.get("id") or str(uuid.uuid4())
     action = (req.get("action") or "").lower()
     try:
+        # Handle empty action as tools request (common in LM Studio)
+        if action == "":
+            return {"id": rid, "ok": True, "result": {"tools": [
+                {"name": "tables",   "params": {}},
+                {"name": "columns",  "params": {"table": "str"}},
+                {"name": "columns_with_examples", "params": {"table": "str", "n": "int (optional)"}},
+                {"name": "query",    "params": {"sql": "str"}},
+                {"name": "sample",   "params": {"table": "str", "n": "int (optional)"}},
+                {"name": "paginate", "params": {"sql": "str", "offset": "int", "fetch": "int"}},
+                {"name": "stats",    "params": {"table": "str", "sample_n": "int (optional)"}},
+                {"name": "explain",  "params": {"sql": "str"}},
+            ]}}
         if action == "ping":
             return {"id": rid, "ok": True, "result": "pong"}
         if action == "tools":
